@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple Weather App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!--<link rel="manifest" href="site.webmanifest" /> -->
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="js/vendor/modernizr-3.11.2.min.js" defer></script>
+    <script src="js/plugins.js" defer></script>
+    <script src="js/main.js" defer></script>
+
+    <meta name="theme-color" content="#fafafa" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Lato:wght@700&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Add your site or application content here -->
+    <div id="app">
+      <div class="container">
+        <div class="child1">
+          <h1>Simple Weather App</h1>
+        </div>
+        <div class="child2">
+          <form>
+            <input type="text" placeholder="Search for a city" />
+            <button class="get" type="submit">Submit</button>
+            <button class="refresh hide" type="reset">Reset</button>
+          </form>
+          <div class="weather-results hide">
+            <section class="results"></section>
+            <div class="weather-icon"><img src="icons/unknown.png" /></div>
+          </div>
+        </div>
+      </div>
+      <!-- <section class="results">
+        <ul class="weather"></ul>
+      </section> -->
+      <footer>
+        <h3>Made with <span>❤</span> by Ramya Kasarabada</h3>
+      </footer>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "anonymizeIp", true);
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
+</html>
