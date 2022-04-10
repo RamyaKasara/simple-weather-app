@@ -26,18 +26,26 @@ weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const value = input.value;
   getData(value);
-  weatherResults.classList.add("format-results");
-  //console.log(value);
 });
 
 const apiKey = "8cab29e5fa808f596f9ebd7f36f47fb6";
 const getData = async function (value) {
+  //function cannot return the data procured from API don't know why
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${value}&appid=${apiKey}&units=metric`
   );
   const data = await res.json();
-  displayWeather(data);
-  console.log(data);
+
+  try {
+    //console.log(data);
+    if (data.cod == "404") {
+      locationIcon.classList.add("hide");
+      throw "Enter a valid City";
+    }
+    displayWeather(data);
+  } catch (err) {
+    weatherResults.innerHTML = `<p>${err}</p>`;
+  }
 };
 
 const displayWeather = function (data) {
@@ -65,4 +73,7 @@ resetButton.addEventListener("click", function () {
   resetButton.classList.add("hide");
   weatherResultsDiv.classList.add("hide");
   submitButton.classList.remove("hide");
+  if (locationIcon.classList.contains("hide")) {
+    locationIcon.classList.remove("hide");
+  }
 });
