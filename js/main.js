@@ -20,6 +20,7 @@ submitButton.addEventListener("click", function () {
   resetButton.classList.remove("hide");
   weatherResultsDiv.classList.remove("hide");
   submitButton.classList.add("hide");
+  input.classList.add("hide");
 });
 
 weatherForm.addEventListener("submit", (e) => {
@@ -73,6 +74,7 @@ resetButton.addEventListener("click", function () {
   resetButton.classList.add("hide");
   weatherResultsDiv.classList.add("hide");
   submitButton.classList.remove("hide");
+  input.classList.remove("hide");
   if (locationIcon.classList.contains("hide")) {
     locationIcon.classList.remove("hide");
   }
